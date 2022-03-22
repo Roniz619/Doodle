@@ -11,15 +11,20 @@ public class BreakablePlatform : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovement>())
         {
+            
             Rigidbody rb = other.GetComponent<Rigidbody>();
-                if (rb.velocity.y<0)
+            
+            if (rb.velocity.y<0)
             {
+                
                 Vector3 newVelocity = rb.velocity;
                 newVelocity.y = jumpForce;
                 rb.velocity = newVelocity;
                 Destroy(gameObject);
+                
             }
         }
+        
     }
     // Start is called before the first frame update
     void Start()

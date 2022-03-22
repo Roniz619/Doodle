@@ -11,10 +11,14 @@ public class CoinsScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.GetComponent<PlayerMovement>())
         {
-            Destroy(gameObject);
+            Destroy(gameObject,0.4f);
+            GetComponent<AudioSource>().Play();
+
         }
+        
     }
     // Update is called once per frame
     void Update()
